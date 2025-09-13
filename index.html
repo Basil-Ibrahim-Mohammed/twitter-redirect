@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
+  <meta charset="utf-8"/>
+  <title>Login Successful</title>
   <style>
-    body { 
+    body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 50 px;
+      margin-top: 100 px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      color: #28a745;
     }
   </style>
 </head>
 <body>
-  <h2>You can safely close this page.</h2>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const oauthToken = params.get("oauth_token");
-    const oauthVerifier = params.get("oauth_verifier");
-
-    if (oauthToken && oauthVerifier) {
-      // Redirect back into your app
-      window.location.href = `prestige://callback?oauth_token=${oauthToken}&oauth_verifier=${oauthVerifier}`;
-    }
-  </script>
+  <h2>✅ Login Successful</h2>
+  <p>You can safely close this window and return to the app.</p>
 </body>
 </html>
