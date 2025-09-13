@@ -19,6 +19,19 @@
       font-size: 18 px;
     }
   </style>
+  <script>
+  // Get query params from the redirect URL (oauth_token & oauth_verifier)
+  const params = new URLSearchParams(window.location.search);
+  const oauthToken = params.get("oauth_token");
+  const oauthVerifier = params.get("oauth_verifier");
+
+  if (oauthToken && oauthVerifier) {
+    // Redirect back to app with tokens
+    window.location.href = `prestige://callback?oauth_token=${oauthToken}&oauth_verifier=${oauthVerifier}`;
+  } else {
+    document.body.innerHTML = "<h1>Login failed. Please try again.</h1>";
+  }
+</script>
 </head>
 <body>
   <h2>Twitter Login Complete!</h2>
